@@ -46,7 +46,7 @@ class PegawaiController extends Controller
     {
         $request->validate([
             'nama_pegawai' => 'required|between:3,100|regex:/[a-zA-Z]+$/|unique:pegawais,nama',
-            'nip'=>'nullable|between:3,100|unique:pegawais',
+            'nip'=>'nullable|digits:18|unique:pegawais',
             'alamat'=> 'nullable|min:5',
             'username' => 'required|between:3,100|alpha_dash|unique:pegawais',
             'password'=> 'required|min:4|confirmed'
